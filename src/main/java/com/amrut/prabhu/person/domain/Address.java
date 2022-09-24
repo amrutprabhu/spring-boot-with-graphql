@@ -1,4 +1,4 @@
-package com.amrut.prabhu.person;
+package com.amrut.prabhu.person.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,17 +7,17 @@ import javax.persistence.Id;
 public class Address {
 
     @Id
-    private String id;
+    private Integer id;
     private Integer personId;
 
     private String street;
     private AddressType type;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

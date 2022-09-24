@@ -3,5 +3,9 @@ query get_person($id: Int!){
         id
         name
         phone
+        address {
+            type
+            street
+        }
     }
 }

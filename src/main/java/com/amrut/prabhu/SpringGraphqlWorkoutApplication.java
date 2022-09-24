@@ -18,12 +18,12 @@ public class SpringGraphqlWorkoutApplication {
 	@Autowired
 	private BookRepository bookRepository;
 
-	@EventListener(value = ApplicationReadyEvent.class)
-	public void addBooks(){
-		Book entity = new Book();
-		entity.setId("1");
-		entity.setName("amrut");
-		bookRepository.save(entity);
-	}
+//	@EventListener(value = ApplicationReadyEvent.class)
+//	public void addBooks(){
+//		Book entity = new Book();
+//		entity.setId("1");
+//		entity.setName("amrut");
+//		bookRepository.save(entity);
+//	}
 
 }

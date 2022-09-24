@@ -1,5 +1,9 @@
 package com.amrut.prabhu.person;
 
+import com.amrut.prabhu.person.domain.Address;
+import com.amrut.prabhu.person.domain.AddressRepository;
+import com.amrut.prabhu.person.domain.Person;
+import com.amrut.prabhu.person.domain.PersonRepository;
 import graphql.schema.DataFetchingEnvironment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -32,12 +36,11 @@ public class GraphQLController {
         return addressRepository.findByPersonId(person.getId());
     }
 
-    @SchemaMapping
-    public String phone(Person person) {
+    @SchemaMapping(value = "phone")
+    public String getPhone(Person person) {
         System.out.println("Fetching phone");
         throw new RuntimeException("Did not find phone data");
     }
-
 
 
     @MutationMapping(name = "createPerson")
