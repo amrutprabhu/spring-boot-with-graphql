@@ -25,13 +25,13 @@ public class GraphQLController {
     private AddressRepository addressRepository;
 
     @QueryMapping(value = "person")
-    public Optional<Person> getPerson(@Argument(name = "id") Integer id, DataFetchingEnvironment dataFetchingEnvironment) {
+    public Optional<Person> getPerson(@Argument(name = "id") Integer id) {
         System.out.println("Querying Person");
         return personRepository.findById(id);
     }
 
-    @SchemaMapping
-    public List<Address> address(Person person) {
+    @SchemaMapping(value = "address")
+    public List<Address> getAddress(Person person) {
         System.out.println("Fetching address");
         return addressRepository.findByPersonId(person.getId());
     }
@@ -44,13 +44,12 @@ public class GraphQLController {
 
 
     @MutationMapping(name = "createPerson")
-    public Person createPerson(@Argument(name = "person") Person person) {
-        personRepository.save(person);
-        return person;
+    public Person addPerson(@Argument(name = "person") Person person) {
+        return personRepository.save(person);
     }
 
     @MutationMapping(name = "createAddress")
-    public Address createAddress(@Argument(name = "address") Address address) {
+    public Address addAddress(@Argument(name = "address") Address address) {
         return addressRepository.save(address);
     }
 }

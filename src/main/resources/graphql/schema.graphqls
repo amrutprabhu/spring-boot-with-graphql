@@ -21,13 +21,13 @@ type Query{
 # Mutation
 
 input AddressInput{
-    id: String!
+    id: Int!
     personId: Int!
     type: AddressType!
     street: String!
 }
 input PersonInput{
-    id: String!
+    id: Int!
     name: String!
 }
 
