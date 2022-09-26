@@ -1,11 +1,15 @@
+# Implementing GraphQL APIs in a Spring Boot Application
 
+In this repo, we have implemented graphql and provided APIs to query and add data using mutations.
 
-GraphQL schema : https://github.com/graphql/graphql-spec
+You can read about this on my website [https://refactorfirst.com](https://refactorfirst.com)
 
+GraphQL Specifications: https://github.com/graphql/graphql-spec
 
+Sample GraphQL queries
 ````graphql
 query get_person{
-    person(id : 2){
+    person(id : 1){
         id
         name
         phone
