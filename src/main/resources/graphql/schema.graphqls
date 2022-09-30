@@ -31,17 +31,10 @@ input PersonInput{
     name: String!
 }
 
-input BookInput{
-    id: String!
-    name: String!
-}
-
 type Mutation{
     createPerson(person: PersonInput):Person
     createAddress(address: AddressInput): Address
-    BookQueryDsl(book: BookInput): Book
 }
-
 
 # query DSl
 
