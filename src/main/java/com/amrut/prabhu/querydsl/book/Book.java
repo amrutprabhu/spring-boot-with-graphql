@@ -1,7 +1,7 @@
 package com.amrut.prabhu.querydsl.book;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Book {
